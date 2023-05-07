@@ -71,4 +71,13 @@ public class PlanoDeVoo {
 		return this.cancelado;
 	}
 
+	public PlanoDeVoo(String id, String matricPiloto, String idAeronave, String idAerovia, LocalDateTime dataHorarioDeInicio) {
+		this.id = id;
+		this.matricPiloto = matricPiloto;
+		this.idAeronave = idAeronave;
+		this.idAerovia = idAerovia;
+		this.dataHorarioDeInicio = dataHorarioDeInicio;
+	}
 }
+
+

@@ -20,7 +20,7 @@ public class RepositorioAeronaveJPA implements IRepositorioAeronaves {
     }
 
     @Override
-    public LinkedList<Aeronave> todas() { return new ArrayList<>(aeronaves); }
+    public LinkedList<Aeronave> todas() { return new LinkedList<>(aeronaves); }
 
     @Override
     public Aeronave getById(String id) {

@@ -1,6 +1,6 @@
 package Aplicacao;
 
-import Dominio.ServicoAerovia;
+import Service.ServicoAerovia;
 
 public class ListarAltitudesLivres {
 

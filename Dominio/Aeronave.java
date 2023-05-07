@@ -32,23 +32,18 @@ public class Aeronave {
 		return this.autonomiaKm;
 	}
 
-	public Aeronave id(String id) {
+	public Aeronave	(String id, String prefixo, TipoDeAeronave tipo, double velocidadeDeCruzeiroKmH, double autonomiaKm) {
 		this.id = id;
-		return this;
-	}
-
-	public Aeronave prefixo(String prefixo) {
 		this.prefixo = prefixo;
-		return this;
+		this.tipo = tipo;
+		this.velocidadeDeCruzeiroKmH = velocidadeDeCruzeiroKmH;
+		this.autonomiaKm = autonomiaKm;
 	}
 
-	public Aeronave tipo(TipoDeAeronave tipo) {
-		this.tipo = tipo;
-		return this;
-	}
-	public Aeronave velocidadeDeCruzeiroKmH(double velocidadeDeCruzeiroKmH) {
-		this.velocidadeDeCruzeiroKmH = velocidadeDeCruzeiroKmH;
-		return this;
+	@Override
+	public String toString() {
+		return "Aeronave [id=" + id + ", prefixo=" + prefixo + "tipo=" + tipo + "velocidade=" + velocidadeDeCruzeiroKmH + "autonomia=" +autonomiaKm + "]";
+
 	}
 
 }

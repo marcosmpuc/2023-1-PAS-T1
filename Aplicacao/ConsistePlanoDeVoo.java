@@ -1,6 +1,6 @@
 package Aplicacao;
 
-import Dominio.ServicoPlanos;
+import Service.ServicoPlanos;
 
 public class ConsistePlanoDeVoo {
 

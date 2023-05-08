@@ -1,0 +1,14 @@
+Aplicacao\CancelarPlanodeVoo.class
+Aplicacao\ListarAltitudesLivres.class
+Dominio\Aerovia.class
+Dominio\Aeronave.class
+InterfacesAdaptadoras\IRepositorioPlanos.class
+Service\ServicoAerovia.class
+Dominio\PlanoDeVoo.class
+InterfacesAdaptadoras\IRepositorioAeronaves.class
+Service\ServicoPlanos.class
+Repository\RepositorioOcupacoesJPA.class
+InterfacesAdaptadoras\IRepositorioAerovias.class
+Aplicacao\ListarPlanosDeVoo.class
+Dominio\TipoDeAeronave.class
+Aplicacao\ListarAerovias.class

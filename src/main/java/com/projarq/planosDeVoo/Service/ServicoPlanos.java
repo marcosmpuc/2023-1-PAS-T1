@@ -11,7 +11,7 @@ public class ServicoPlanos {
 		return null;
 	}
 
-	public void cancela(String id) {
+	public void cancela(Long id) {
 
 	}
 

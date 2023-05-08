@@ -1,5 +1,9 @@
 package Dominio;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -22,11 +26,11 @@ public class PlanoDeVoo {
 
 	private boolean cancelado;
 
-	public String getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setMatricPiloto(String matricPiloto) {
+	public void setMatricPiloto(Long matricPiloto) {
 		this.matricPiloto = matricPiloto;
 	}
 
@@ -74,13 +78,9 @@ public class PlanoDeVoo {
 		return this.cancelado;
 	}
 
-	/* public PlanoDeVoo(Long id, Long matricPiloto, Long idAeronave, Long idAerovia, LocalDateTime dataHorarioDeInicio) {
+	public PlanoDeVoo(Long id) {
 		this.id = id;
-		this.matricPiloto = matricPiloto;
-		this.idAeronave = idAeronave;
-		this.idAerovia = idAerovia;
-		this.dataHorarioDeInicio = dataHorarioDeInicio;
-	} */
+	}
 
 	public PlanoDeVoo id(Long id) {
 		this.id = id;

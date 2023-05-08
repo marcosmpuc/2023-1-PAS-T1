@@ -1,9 +1,9 @@
 package Service;
 
 import Dominio.Aerovia;
-import Repository.IRepositorioAeronaves;
-import Repository.IRepositorioAerovias;
-import Repository.IRepositorioPlanos;
+import InterfacesAdaptadoras.IRepositorioAeronaves;
+import InterfacesAdaptadoras.IRepositorioAerovias;
+import InterfacesAdaptadoras.IRepositorioPlanos;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,23 +16,23 @@ public class ServicoAerovia {
 
 	private IRepositorioPlanos iRepositorioPlanos;
 
-	public ArrayList<Integer> altitudesOcupadas(String idAerovia, LocalDateTime data) {
+	public ArrayList<Integer> altitudesOcupadas(Long idAerovia, LocalDateTime data) {
 		return null;
 	}
 
-	public ArrayList<Integer> slotsOcupados(String idAerovia, LocalDateTime data, int altitude) {
+	public ArrayList<Integer> slotsOcupados(Long idAerovia, LocalDateTime data, int altitude) {
 		return null;
 	}
 
-	public boolean ocupa(String idAerovia, LocalDateTime data, int altitude, int slot) {
+	public boolean ocupa(Long idAerovia, LocalDateTime data, int altitude, int slot) {
 		return false;
 	}
 
-	public boolean libera(String idAerovia, LocalDateTime data, int altitude, int slot) {
+	public boolean libera(Long idAerovia, LocalDateTime data, int altitude, int slot) {
 		return false;
 	}
 
-	public boolean isOcupado(String idAerovia, LocalDateTime data, int altitude, int slot) {
+	public boolean isOcupado(Long idAerovia, LocalDateTime data, int altitude, int slot) {
 		return false;
 	}
 

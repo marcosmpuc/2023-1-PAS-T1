@@ -1,5 +1,10 @@
 package Dominio;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 @Entity
 public class Aerovia {
 
@@ -33,6 +38,10 @@ public class Aerovia {
 
 	public int getAltura() {
 		return this.altura;
+	}
+
+	public Aerovia(Long id) {
+		this.id = id;
 	}
 
 	public Aerovia id(Long id) {

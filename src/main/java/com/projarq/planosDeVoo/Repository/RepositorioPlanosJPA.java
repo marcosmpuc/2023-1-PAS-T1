@@ -1,9 +1,9 @@
-package Repository;
+package com.projarq.planosDeVoo.Repository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import Dominio.PlanoDeVoo;
-import InterfacesAdaptadoras.IRepositorioPlanos;
+import com.projarq.planosDeVoo.Dominio.PlanoDeVoo;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioPlanos;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;

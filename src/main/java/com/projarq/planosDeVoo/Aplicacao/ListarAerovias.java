@@ -1,6 +1,6 @@
-package Aplicacao;
+package com.projarq.planosDeVoo.Aplicacao;
 
-import Service.ServicoAerovia;
+import com.projarq.planosDeVoo.Service.ServicoAerovia;
 
 public class ListarAerovias {
 

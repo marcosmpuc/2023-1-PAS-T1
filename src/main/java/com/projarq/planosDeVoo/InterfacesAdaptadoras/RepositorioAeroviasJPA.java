@@ -1,8 +1,10 @@
-package InterfacesAdaptadoras;
+package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import java.util.LinkedList;
-import Dominio.Aerovias;
-import Repository.IRepositorioAerovias;
+import java.util.List;
+
+import com.projarq.planosDeVoo.Dominio.Aerovia;
+import com.projarq.planosDeVoo.Repository.IRepositorioAerovias;
 
 @Repository
 public class RepositorioAeroviasJPA implements IRepositorioAerovias {

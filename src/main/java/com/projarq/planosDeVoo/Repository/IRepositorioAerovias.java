@@ -1,7 +1,9 @@
-package Repository;
+package com.projarq.planosDeVoo.Repository;
 
-import Dominio.Aerovias;
+import com.projarq.planosDeVoo.Dominio.Aerovia;
 import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
 
 public interface IRepositorioAerovias extends CrudRepository<Aerovia, Long> {
     List<Aerovias> todas();

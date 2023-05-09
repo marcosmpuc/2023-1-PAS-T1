@@ -1,4 +1,4 @@
-package Dominio;
+package com.projarq.planosDeVoo.Dominio;
 
 public enum TipoDeAeronave {
     PARTICULAR_DE_PEQUENO_PORTE,

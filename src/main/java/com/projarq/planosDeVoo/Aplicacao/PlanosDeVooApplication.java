@@ -1,4 +1,4 @@
-package com.projarq.planosDeVoo;
+package com.projarq.planosDeVoo.Aplicacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

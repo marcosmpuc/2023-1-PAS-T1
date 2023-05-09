@@ -1,7 +1,7 @@
-package InterfacesAdaptadoras;
+package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import org.springframework.data.repository.CrudRepository;
-import Dominio.PlanoDeVoo;
+import com.projarq.planosDeVoo.Dominio.PlanoDeVoo;
 import java.util.List;
 
 public interface IRepositorioPlanos extends CrudRepository<PlanoDeVoo, Long> {

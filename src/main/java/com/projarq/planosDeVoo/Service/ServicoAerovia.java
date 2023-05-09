@@ -1,9 +1,9 @@
-package Service;
+package com.projarq.planosDeVoo.Service;
 
-import Dominio.Aerovia;
-import InterfacesAdaptadoras.IRepositorioAeronaves;
-import InterfacesAdaptadoras.IRepositorioAerovias;
-import InterfacesAdaptadoras.IRepositorioPlanos;
+import com.projarq.planosDeVoo.Dominio.Aerovia;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAeronaves;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAerovias;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioPlanos;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package Dominio;
+package com.projarq.planosDeVoo.Dominio;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

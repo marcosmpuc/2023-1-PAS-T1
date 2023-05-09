@@ -1,10 +1,10 @@
-package Repository;
+package com.projarq.planosDeVoo.Repository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.LinkedList;
-import Dominio.Aerovia;
-import InterfacesAdaptadoras.IRepositorioAerovias;
+import com.projarq.planosDeVoo.Dominio.Aerovia;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAerovias;
 
 @Repository
 public class RepositorioAeroviasJPA implements IRepositorioAerovias {

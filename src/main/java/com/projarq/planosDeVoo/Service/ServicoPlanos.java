@@ -1,7 +1,7 @@
-package Service;
+package com.projarq.planosDeVoo.Service;
 
-import Dominio.PlanoDeVoo;
-import Service.ServicoAerovia;
+import com.projarq.planosDeVoo.Dominio.PlanoDeVoo;
+import com.projarq.planosDeVoo.Service.ServicoAerovia;
 
 public class ServicoPlanos {
 

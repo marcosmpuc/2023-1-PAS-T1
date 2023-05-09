@@ -1,6 +1,6 @@
-package Aplicacao;
+package com.projarq.planosDeVoo.Aplicacao;
 
-import Service.ServicoPlanos;
+import com.projarq.planosDeVoo.Aplicacao.*;
 
 public class CancelarPlanodeVoo {
 

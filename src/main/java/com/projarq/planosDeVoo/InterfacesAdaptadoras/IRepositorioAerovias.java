@@ -1,7 +1,7 @@
-package InterfacesAdaptadoras;
+package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import org.springframework.data.repository.CrudRepository;
-import Dominio.Aerovia;
+import com.projarq.planosDeVoo.Dominio.Aerovia;
 import java.util.List;
 
 public interface IRepositorioAerovias extends CrudRepository<Aerovia, Long> {

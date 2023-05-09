@@ -3,9 +3,9 @@ package Controller;
 import Aplicacao.CancelarPlanodeVoo;
 import Aplicacao.ConsistePlanoDeVoo;
 import Aplicacao.ListarAerovias;
-import Aplicacao.ListarPlanosDeVoo;
-import Aplicacao.ListarAltitudesLivres;
-import Aplicacao.AprovarPlanoDeVoo;
+import com.projarq.planosDeVoo.Aplicacao.ListarPlanosDeVoo;
+import com.projarq.planosDeVoo.Aplicacao.ListarAltitudesLivres;
+import com.projarq.planosDeVoo.Aplicacao.AprovarPlanoDeVoo;
 
 public class AeroviasController {
 

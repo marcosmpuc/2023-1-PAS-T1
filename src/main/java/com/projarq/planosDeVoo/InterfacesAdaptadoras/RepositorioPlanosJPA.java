@@ -1,8 +1,8 @@
-package InterfacesAdaptadoras;
+package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import Dominio.PlanoDeVoo;
-import Repository.IRepositorioPlanos;
+import com.projarq.planosDeVoo.Dominio.PlanoDeVoo;
+import com.projarq.planosDeVoo.Repository.IRepositorioPlanos;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;

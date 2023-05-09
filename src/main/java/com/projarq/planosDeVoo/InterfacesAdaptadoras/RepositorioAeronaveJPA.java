@@ -1,11 +1,15 @@
-package InterfacesAdaptadoras;
+package com.projarq.planosDeVoo.InterfacesAdaptadoras;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.LinkedList;
-import Dominio.Aeronave;
-import Dominio.TipoDeAeronave;
-import Repository.IRepositorioAeronaves;
 
+import java.util.LinkedList;
+import com.projarq.planosDeVoo.Dominio.Aeronave;
+import com.projarq.planosDeVoo.Dominio.TipoDeAeronave;
+import com.projarq.planosDeVoo.Repository.IRepositorioAeronaves;
+
+//n sei oq ta dando de erro nesse import
+//e na logica da propria classe mesmo
 @Repository
 public class RepositorioAeronaveJPA implements IRepositorioAeronaves {
     private LinkedList<Aeronave> aeronaves;

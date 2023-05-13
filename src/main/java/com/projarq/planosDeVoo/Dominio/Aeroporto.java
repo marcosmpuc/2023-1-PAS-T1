@@ -10,13 +10,13 @@ public class Aeroporto {
 
     @Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     private String localidade;
 
-    Aeroporto(int id, String localidade) {}
+    Aeroporto(Long id, String localidade) {}
     
-    public int getId() {
+    public Long getId() {
         return this.id;
     }
 

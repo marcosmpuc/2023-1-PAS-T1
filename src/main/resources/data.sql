@@ -1,0 +1,3 @@
+INSERT INTO aeronave VALUES (1, 50.0, 'PR512', 1 , 700.0)
+INSERT INTO aeronave VALUES (2, 100.0, 'PP1050', 2 , 1000.0)
+INSERT INTO aeronave VALUES (3, 75.0, 'PT13', 3 ,950.0)

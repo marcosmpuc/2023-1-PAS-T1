@@ -1,14 +1,16 @@
 package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import com.projarq.planosDeVoo.Dominio.Aerovia;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
-public interface IRepositorioAerovias {
+@Repository
+public interface IRepositorioAerovias extends JpaRepository<Aerovia, Long> {
     ArrayList<Aerovia> findAll();
-    ArrayList<Aerovia> listarAerovias(String origem, String destino);
+
+    List<Aerovia> findByOrigemAndDestino(String origem, String destino);
     Aerovia getByOrigem(String origem);
     Aerovia getByDestino(String destino);
 }

@@ -2,6 +2,7 @@ package com.projarq.planosDeVoo.Controller;
 
 import com.projarq.planosDeVoo.Dominio.Aerovia;
 import com.projarq.planosDeVoo.Service.ServicoAerovia;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,12 +11,11 @@ import java.util.ArrayList;
 @RequestMapping("/aerovias")
 public class AeroviasController {
 
+    @Autowired
     private ServicoAerovia servicoAerovia;
 
-    @GetMapping("/{origem}{destino}")
-    @CrossOrigin(origins = "*")
-    public ArrayList<Aerovia> listarAerovias(@PathVariable("origem")String origem, @PathVariable("destino") String destino){
-        servicoAerovia = new ServicoAerovia();
+    @GetMapping("/{origem}/{destino}")
+    public ArrayList<Aerovia> listarAerovias(@PathVariable(value = "origem")String origem, @PathVariable(value = "destino") String destino){
         return servicoAerovia.listarAerovias(origem, destino);
     }
 }

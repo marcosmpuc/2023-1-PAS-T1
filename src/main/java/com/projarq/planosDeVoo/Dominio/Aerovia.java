@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.ArrayList;
+
 @Entity
 public class Aerovia {
 
@@ -14,9 +16,10 @@ public class Aerovia {
 	private String origem;
 	private String destino;
 	private double tamanho;
-	private int altitude;
+	private ArrayList<Integer> slots;
 
-	public Aerovia(String s, String rio_de_janeiro, String porto_alegre, double v, int i) {
+	public Aerovia(String origem, String destino, double tamanho) {
+		slots = new ArrayList<Integer>(24);
 	}
 
 	public Long getId() {
@@ -33,10 +36,6 @@ public class Aerovia {
 
 	public double getTamanho() {
 		return this.tamanho;
-	}
-
-	public int getAltitude() {
-		return this.altitude;
 	}
 
 	public Aerovia(Long id) {
@@ -60,11 +59,6 @@ public class Aerovia {
 
 	public Aerovia tamanho(double tamanho) {
 		this.tamanho = tamanho;
-		return this;
-	}
-
-	public Aerovia altitude(int altitude) {
-		this.altitude = altitude;
 		return this;
 	}
 

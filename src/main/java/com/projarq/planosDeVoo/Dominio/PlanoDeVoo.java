@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Entity
-@Table(name = "PLANO_DE_VOO")
 public class PlanoDeVoo {
 
 	@Id
@@ -16,8 +15,8 @@ public class PlanoDeVoo {
 	private Long idAeronave;
 	private Long idAerovia;
 	private LocalDateTime dataHorarioDeInicio;
-	private ArrayList<Integer> slots;
 	private boolean cancelado;
+	//altitude min 2500 max 35000
 	private int altitude;
 
 	public PlanoDeVoo(String s, String s1, String s2, String s3, LocalDateTime now) {
@@ -57,14 +56,6 @@ public class PlanoDeVoo {
 
 	public LocalDateTime getDataHorarioDeInicio() {
 		return this.dataHorarioDeInicio;
-	}
-
-	public void setSlots(ArrayList<Integer> slots) {
-		this.slots = slots;
-	}
-
-	public ArrayList<Integer> getSlots() {
-		return this.slots;
 	}
 
 	public void setCancelado(boolean cancelado) {

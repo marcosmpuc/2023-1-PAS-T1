@@ -6,5 +6,5 @@ import com.projarq.planosDeVoo.Dominio.Aerovia;
 import java.util.List;
 
 public interface IRepostiorioOcupação {
-    List<PlanoDeVoo> getSlotsOcupados(Aerovia aerovia);    
+    List<PlanoDeVoo> getSlotsLivres(Aerovia aerovia);
 }

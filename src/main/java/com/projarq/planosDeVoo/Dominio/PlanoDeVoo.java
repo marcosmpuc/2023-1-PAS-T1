@@ -18,9 +18,9 @@ public class PlanoDeVoo {
 	private LocalDateTime dataHorarioFim;
 	private boolean cancelado;
 	//altitude min 2500 max 35000
-	private int altitude;
+	private Long altitude;
 
-	public PlanoDeVoo(String s, String s1, String s2, String s3, LocalDateTime now,LocalDateTime dataHorarioFinal,boolean cancelado) {
+	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim,boolean cancelado, Long altitude) {
 	}
 
 	public Long getId() {
@@ -103,6 +103,15 @@ public class PlanoDeVoo {
 	public PlanoDeVoo cancDeVoo(boolean cancelado){
 		this.cancelado= cancelado;
 		return this;
+	}
+
+	public PlanoDeVoo altitude(Long altitude){
+		if(altitude < 2500 || altitude > 35000){
+			return null;
+		}else{
+			this.altitude = altitude;
+			return this;
+		}
 	}
 
 	// Obrigatório para geração automática dos id's pela JPA

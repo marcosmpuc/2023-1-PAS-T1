@@ -14,9 +14,9 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
     public RepositorioPlanosJPA() {
         planoDeVoos = new LinkedList<>();
 
-        planoDeVoos.add(new PlanoDeVoo("1", "42090", "1", "1", LocalDateTime.now(),LocalDateTime.now().plusHours(2),true));
-        planoDeVoos.add(new PlanoDeVoo("2", "89056", "2", "2", LocalDateTime.now(),LocalDateTime.now().plusHours(2),true));
-        planoDeVoos.add(new PlanoDeVoo("3", "11000", "3", "3", LocalDateTime.now(),LocalDateTime.now().plusHours(2),true));
+        planoDeVoos.add(new PlanoDeVoo(1L, 42090L, 1L, 1L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 3000L));
+        planoDeVoos.add(new PlanoDeVoo(2L, 89056L, 2L, 2L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 5000L));
+        planoDeVoos.add(new PlanoDeVoo(3L, 11000L, 3L, 3L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 6000L));
     }
 
     @Override

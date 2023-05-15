@@ -19,9 +19,10 @@ public class ServicoPlano {
     }
 
      public ArrayList<PlanoDeVoo> listarPlanos(){
-       var ls = (ArrayList<PlanoDeVoo>) iRepositorioPlanos.todos();
-       return ls;
+      var ls = (ArrayList<PlanoDeVoo>) iRepositorioPlanos.todos();
+      return ls;
      }
+
     //  public boolean cancelarPlano(Long idPlano) {
     //     PlanoDeVoo plano = iRepositorioPlanos.getById(idPlano);
     //     if (plano == null) {

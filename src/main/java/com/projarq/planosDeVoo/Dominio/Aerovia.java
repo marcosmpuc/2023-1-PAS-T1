@@ -62,6 +62,7 @@ public class Aerovia {
 		return this;
 	}
 
+
 	// Obrigatório para geração automática dos id's pela JPA
 	protected Aerovia() {}
 }

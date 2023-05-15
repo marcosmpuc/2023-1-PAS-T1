@@ -1,5 +1,7 @@
 package com.projarq.planosDeVoo.Service;
 
+import com.projarq.planosDeVoo.Dominio.Aeronave;
+import com.projarq.planosDeVoo.Dominio.Aerovia;
 import com.projarq.planosDeVoo.Dominio.AltitudeSlots;
 import com.projarq.planosDeVoo.Dominio.PlanoDeVoo;
 import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAeronaves;
@@ -57,6 +59,20 @@ public class ServicoPlano {
         return null;
     }
 
+    public boolean slotsEstaoLivres(PlanoDeVoo planoSendoAvaliado) {
+        PlanoDeVoo planoTeste = iRepositorioPlanos.findAll().stream().filter(
+                plano -> (plano.getDataHorarioDeInicio() == planoSendoAvaliado.getDataHorarioDeInicio()
+                && plano.verificarSeSlotsConflitam(planoSendoAvaliado.getSlots())
+                && plano.getAltitude() == planoSendoAvaliado.getAltitude()))
+            .findAny()
+            .orElse(null);
+
+        if (planoTeste == null)
+            return true;
+        else
+            return false;
+    }
+
     public ArrayList<Integer> calcularSlots(Long idAerovia, LocalDateTime dataHorarioInicio, Long idAeronave) {
         ArrayList<Integer> slots = new ArrayList<>();
         
@@ -67,6 +83,26 @@ public class ServicoPlano {
         }
         
         return slots;
+    }
+
+    public String verificarPlanoDeVoo(PlanoDeVoo propostaPlano) {
+        String output = "";
+
+        Aeronave aeronave = iRepositorioAeronaves.getById(propostaPlano.getIdAeronave());
+
+        if (!slotsEstaoLivres(propostaPlano))
+            output += "\nProblema: slots não estão livres.";
+
+        if (!aeronave.obterAltitudesValidas().contains(propostaPlano.getAltitude()))
+            output += "\nProblema: altitude não é válida.";
+        
+        //if (!aeronave.obterHorariosValidos().contains(propostaPlano.getDataHorarioInicio())
+           // || !aeronave.obterHorariosValidos().contains(propostaPlano.getDataHorarioFim()))
+           output += "\nProblema: data ou horário, de início ou de fim, não são válidas.";
+
+        if (output.equals(""))
+            output = "Aprovado.";
+        return output;
     }
 
 }

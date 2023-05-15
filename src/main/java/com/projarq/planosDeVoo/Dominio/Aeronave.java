@@ -53,7 +53,16 @@ public class Aeronave {
 	}
 
 	public Aeronave prefixo(String prefixo) {
-		this.prefixo = prefixo;
+		//INVALID CONDITIONS
+		if (prefixo.contains("SOS") || prefixo.contains("XXX") || prefixo.contains("PAN") || prefixo.contains("TTT") || prefixo.contains("VFR") ||
+			prefixo.contains("IFR") || prefixo.contains("VMC") || prefixo.contains("IMC")) {
+				throw new IllegalArgumentException("Prefixo inválido.");
+			}
+		else if (prefixo.startsWith("Q") == true) {throw new IllegalArgumentException("Prefixo inválido.");}
+		else if (prefixo.charAt(1) == 'W') {throw new IllegalArgumentException("Prefixo inválido.");}
+		else {
+			this.prefixo = prefixo;
+		}
 		return this;
 	}
 

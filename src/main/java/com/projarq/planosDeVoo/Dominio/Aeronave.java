@@ -1,5 +1,7 @@
 package com.projarq.planosDeVoo.Dominio;
 
+import java.io.Console;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -49,8 +51,17 @@ public class Aeronave {
 		return this;
 	}
 
-	public Aeronave prefixo(String prefixo) {
-		this.prefixo = prefixo;
+	public Aeronave prefixo(String prefixo) throws Exception {
+		//INVALID CONDITIONS
+		if (prefixo.contains("SOS") || prefixo.contains("XXX") || prefixo.contains("PAN") || prefixo.contains("TTT") || prefixo.contains("VFR") ||
+			prefixo.contains("IFR") || prefixo.contains("VMC") || prefixo.contains("IMC")) {
+				throw new Exception("Invalid prefix");
+			}
+		else if (prefixo.startsWith("Q") == true) {throw new Exception("Invalid prefix");}
+		else if (prefixo.charAt(1) == 'W') {throw new Exception("Invalid prefix");}
+		else {
+			this.prefixo = prefixo;
+		}
 		return this;
 	}
 

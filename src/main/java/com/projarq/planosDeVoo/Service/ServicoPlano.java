@@ -13,7 +13,9 @@ public class ServicoPlano {
   private IRepositorioPlanos iRepositorioPlanos;
 
   public PlanoDeVoo cancelarPlano(Long idPlano) {
-    var retorno = iRepositorioPlanos.getPlanoDeVooById(idPlano);
-    return retorno;
+    var planoDeVoo = iRepositorioPlanos.getPlanoDeVooById(idPlano);
+    planoDeVoo.setCancelado(true);
+    var ret = iRepositorioPlanos.save(planoDeVoo);
+    return ret;
   }
 }

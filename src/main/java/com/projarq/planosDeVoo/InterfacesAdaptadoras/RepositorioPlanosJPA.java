@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 @Repository
 public class RepositorioPlanosJPA implements IRepositorioPlanos {
@@ -19,11 +20,6 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
         planosDeVoo.add(new PlanoDeVoo(1L, 42090L, 1L, 1L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 3000L));
         planosDeVoo.add(new PlanoDeVoo(2L, 89056L, 2L, 2L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 5000L));
         planosDeVoo.add(new PlanoDeVoo(3L, 11000L, 3L, 3L, LocalDateTime.now(),LocalDateTime.now().plusHours(2),true, 6000L));
-    }
-
-    @Override
-    public LinkedList<PlanoDeVoo> todos() {
-        return new LinkedList<>(planosDeVoo);
     }
 
     @Override
@@ -63,5 +59,17 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
         }
         
         return null;
+    }
+
+    @Override
+    public ArrayList<PlanoDeVoo> findAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
+
+    @Override
+    public List<PlanoDeVoo> findById(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 }

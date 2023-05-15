@@ -21,7 +21,7 @@ public class PlanoDeVoo {
 	private int altitude;
 	private ArrayList<Integer> slots;
 
-	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim,boolean cancelado, Long altitude) {
+	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim, boolean cancelado, Long altitude) {
 	}
 
 	public Long getId() {
@@ -123,12 +123,10 @@ public class PlanoDeVoo {
 	}
 
 	public PlanoDeVoo altitude(int altitude) {
-		if (altitude < 2500 || altitude > 35000) {
-			return null;
-		} else {
-			this.altitude = altitude;
-			return this;
-		}
+		if (altitude < 25000 || altitude > 35000)
+			throw new IllegalArgumentException("Valor inválido");
+		this.altitude = altitude;
+		return this;
 	}
 
 	public PlanoDeVoo slots(ArrayList<Integer> slots) {

@@ -2,7 +2,6 @@ package com.projarq.planosDeVoo.InterfacesAdaptadoras;
 
 import com.projarq.planosDeVoo.Dominio.Aeronave;
 import com.projarq.planosDeVoo.Dominio.TipoDeAeronave;
-import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 

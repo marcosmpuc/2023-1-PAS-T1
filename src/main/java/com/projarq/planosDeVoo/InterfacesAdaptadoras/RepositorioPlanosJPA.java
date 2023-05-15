@@ -67,9 +67,9 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
-    @Override
+    /*@Override
     public List<PlanoDeVoo> findById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
+    }*/
 }

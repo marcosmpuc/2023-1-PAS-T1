@@ -11,34 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ServicoPlano {
-    @Autowired
-    private IRepositorioPlanos iRepositorioPlanos;
+  @Autowired
+  private IRepositorioPlanos iRepositorioPlanos;
 
-    public void consistePlano(PlanoDeVoo planoDeVoo){
-
-    }
-
-     public ArrayList<PlanoDeVoo> listarPlanos(){
-      var ls = (ArrayList<PlanoDeVoo>) iRepositorioPlanos.todos();
-      return ls;
-     }
-
-    //  public boolean cancelarPlano(Long idPlano) {
-    //     PlanoDeVoo plano = iRepositorioPlanos.getById(idPlano);
-    //     if (plano == null) {
-    //         return false;
-    //     }
-
-    //     // Marca o plano como cancelado e libera os slots envolvidos
-    //     plano.setCancelado(true);
-    //     for (Aerovia aerovia : plano.getIdAerovia()) {
-    //         aerovia.setSlotDisponivel(true);
-    //     }
-
-    //     // Atualiza o plano no repositório
-    //     iRepositorioPlanos.salvar(plano);
-
-    //     return true;
-    // }
-
+  public ArrayList<PlanoDeVoo> cancelarPlano(Long idPlano) {
+    var retorno = (ArrayList<PlanoDeVoo>) iRepositorioPlanos.findById(idPlano);
+    return retorno;
+  }
 }

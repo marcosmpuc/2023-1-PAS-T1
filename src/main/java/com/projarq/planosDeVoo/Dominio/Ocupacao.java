@@ -1,6 +1,10 @@
 package com.projarq.planosDeVoo.Dominio;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 
@@ -40,7 +44,7 @@ public class Ocupacao {
 
 	private void calcularSlots() {
 		int hora = dataHorarioInicio.getHour();
-		while (hora < dataHorarioFim.getHour) {
+		while (hora < dataHorarioFim.getHour()) {
 			slots.add(hora);
 			hora++;
 		}

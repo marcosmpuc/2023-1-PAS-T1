@@ -3,13 +3,9 @@ package com.projarq.planosDeVoo.Dominio;
 import java.time.LocalTime;
 
 public enum TipoDeAeronave {
-
     PARTICULAR_DE_PEQUENO_PORTE (25000, 27000, null, null),
-    COMERCIAL_DE_PASSAGEIROS (28000, ALTITUDE_MAXIMA_PES, null, null),
-    COMERCIAL_DE_CARGA (ALTITUDE_MINIMA_PES, ALTITUDE_MAXIMA_PES, LocalTime.of(0, 0), LocalTime.of(6, 0));
-    
-    public static final int ALTITUDE_MINIMA_PES = 25000;
-    public static final int ALTITUDE_MAXIMA_PES = 35000;
+    COMERCIAL_DE_PASSAGEIROS (28000, Aeronave.ALTITUDE_MAXIMA_PES, null, null),
+    COMERCIAL_DE_CARGA (Aeronave.ALTITUDE_MINIMA_PES, Aeronave.ALTITUDE_MAXIMA_PES, LocalTime.of(0, 0), LocalTime.of(6, 0));
 
     public int altitudeMinimaPes;
     public int altitudeMaximaPes;
@@ -23,16 +19,10 @@ public enum TipoDeAeronave {
         this.horarioMaximo = horarioMaximo;
     }
 
-    void altitudeMinimaPes(int altitudeMinimaPes) {
-        this.altitudeMinimaPes = altitudeMinimaPes;
+    boolean validarAltitude(int altitude) {
+        if (altitude < Aeronave.ALTITUDE_MINIMA_PES || altitude >= Aeronave.ALTITUDE_MAXIMA_PES)
+            return false;
+        return true;
     }
-    void altitudeMaximaPes(int altitudeMaximaPes) {
-        this.altitudeMaximaPes = altitudeMaximaPes;
-    }
-    void horarioMinimo(LocalTime horarioMinimo) {
-        this.horarioMinimo = horarioMinimo;
-    }
-    void horarioMaximo(LocalTime horarioMaximo) {
-        this.horarioMaximo = horarioMaximo;
-    }
+
 }

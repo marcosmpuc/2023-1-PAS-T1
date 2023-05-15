@@ -18,6 +18,8 @@ public class Aeronave {
 	private double velocidadeDeCruzeiroKmH;
 	private double autonomiaKm;
 	private ArrayList<Integer> altitudesValidas;
+    public static final int ALTITUDE_MINIMA_PES = 25000;
+    public static final int ALTITUDE_MAXIMA_PES = 35000;
 
 	public Aeronave(String s, String pr512, TipoDeAeronave particularDePequenoPorte, double v, double v1) {
 	}

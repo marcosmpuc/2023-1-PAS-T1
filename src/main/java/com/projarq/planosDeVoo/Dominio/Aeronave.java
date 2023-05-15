@@ -17,7 +17,6 @@ public class Aeronave {
 	private TipoDeAeronave tipo;
 	private double velocidadeDeCruzeiroKmH;
 	private double autonomiaKm;
-	private ArrayList<Integer> altitudesValidas;
     public static final int ALTITUDE_MINIMA_PES = 25000;
     public static final int ALTITUDE_MAXIMA_PES = 35000;
 
@@ -42,10 +41,6 @@ public class Aeronave {
 
 	public double getAutonomiaKm() {
 		return this.autonomiaKm;
-	}
-
-	public ArrayList<Integer> getAltitudesValidas() {
-		return this.altitudesValidas;
 	}
 
 	public Aeronave(Long id) {

@@ -6,12 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Repository
-public interface IRepositorioPlanos {
+public interface IRepositorioPlanos extends JpaRepository<PlanoDeVoo, Long> {
     ArrayList<PlanoDeVoo> findAll();
     
-    PlanoDeVoo getById(Long id);
+    PlanoDeVoo getPlanoDeVooById(Long id);
     // PlanoDeVoo getByMatricPiloto(Long matricPiloto);
     // PlanoDeVoo getByIdAeronave(Long idAeronave);
     // PlanoDeVoo getByIdAerovia(Long idAerovia);

@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-@Repository
-public class RepositorioPlanosJPA implements IRepositorioPlanos {
+public class RepositorioPlanosJPA {
+    /*
     private LinkedList<PlanoDeVoo> planoDeVoos;
 
     public RepositorioPlanosJPA() {
@@ -29,4 +29,5 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
     public PlanoDeVoo getById(Long id) {
         return planoDeVoos.stream().filter(c->(c.getId() == id)).findAny().orElse(null);
     }
+    */
 }

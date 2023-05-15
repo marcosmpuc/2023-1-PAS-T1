@@ -19,6 +19,26 @@ public class Ocupacao {
 	private LocalDateTime dataHorarioInicio;
 	private LocalDateTime dataHorarioFim;
 
+	public Long getId() {
+		return this.id;
+	}
+
+	public Long getIdAerovia() {
+		return this.idAerovia;
+	}
+
+	public ArrayList<Integer> getSlots() {
+		return this.slots;
+	}
+
+	public LocalDateTime getDataHorarioInicio() {
+		return this.dataHorarioInicio;
+	}
+
+	public LocalDateTime getDataHorarioFim() {
+		return this.dataHorarioFim;
+	}
+
 	public Ocupacao idAerovia(Long idAerovia) {
 		this.idAerovia = idAerovia;
 		return this;

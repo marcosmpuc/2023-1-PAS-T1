@@ -108,5 +108,3 @@ public class PlanoDeVoo {
 	// Obrigatório para geração automática dos id's pela JPA
 	protected PlanoDeVoo() {}
 }
-
-

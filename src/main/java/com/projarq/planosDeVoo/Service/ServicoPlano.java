@@ -27,16 +27,17 @@ public class ServicoPlano {
     //     if (plano == null) {
     //         return false;
     //     }
-    
+
     //     // Marca o plano como cancelado e libera os slots envolvidos
     //     plano.setCancelado(true);
     //     for (Aerovia aerovia : plano.getIdAerovia()) {
     //         aerovia.setSlotDisponivel(true);
     //     }
-    
+
     //     // Atualiza o plano no repositório
     //     iRepositorioPlanos.salvar(plano);
-    
+
     //     return true;
     // }
+
 }

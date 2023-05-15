@@ -15,11 +15,12 @@ public class PlanoDeVoo {
 	private Long idAeronave;
 	private Long idAerovia;
 	private LocalDateTime dataHorarioDeInicio;
+	private LocalDateTime dataHorarioFim;
 	private boolean cancelado;
 	//altitude min 2500 max 35000
 	private int altitude;
 
-	public PlanoDeVoo(String s, String s1, String s2, String s3, LocalDateTime now) {
+	public PlanoDeVoo(String s, String s1, String s2, String s3, LocalDateTime now,LocalDateTime dataHorarioFinal,boolean cancelado) {
 	}
 
 	public Long getId() {
@@ -48,6 +49,10 @@ public class PlanoDeVoo {
 
 	public Long getIdAerovia() {
 		return this.idAerovia;
+	}
+
+	public LocalDateTime getHorarioDeEncerramento(){
+		return this.dataHorarioFim;
 	}
 
 	public void setDataDeInicio(LocalDateTime dataHorarioDeInicio) {
@@ -92,6 +97,11 @@ public class PlanoDeVoo {
 
 	public PlanoDeVoo dataHorarioDeInicio(LocalDateTime dataHorarioDeInicio) {
 		this.dataHorarioDeInicio = dataHorarioDeInicio;
+		return this;
+	}
+
+	public PlanoDeVoo cancDeVoo(boolean cancelado){
+		this.cancelado= cancelado;
 		return this;
 	}
 

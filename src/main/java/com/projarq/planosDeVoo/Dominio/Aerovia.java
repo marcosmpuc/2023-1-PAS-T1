@@ -10,58 +10,59 @@ import java.util.ArrayList;
 @Entity
 public class Aerovia {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String origem;
-    private String destino;
-    private double tamanho;
-    private ArrayList<Integer> slots;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	private String origem;
+	private String destino;
+	private double tamanho;
 
-    public Aerovia(String origem, String destino, double tamanho) {
-        slots = new ArrayList<Integer>(24);
-    }
+	public Aerovia(String origem, String destino, double tamanho) {
+		this.origem = origem;
+		this.destino = destino;
+		this.tamanho = tamanho;
+	}
 
-    public Long getId() {
-        return this.id;
-    }
+	public Long getId() {
+		return this.id;
+	}
 
-    public String getOrigem() {
-        return this.origem;
-    }
+	public String getOrigem() {
+		return this.origem;
+	}
 
-    public String getDestino() {
-        return this.destino;
-    }
+	public String getDestino() {
+		return this.destino;
+	}
 
-    public double getTamanho() {
-        return this.tamanho;
-    }
+	public double getTamanho() {
+		return this.tamanho;
+	}
 
-    public Aerovia(Long id) {
-        this.id = id;
-    }
+	public Aerovia(Long id) {
+		this.id = id;
+	}
 
-    public Aerovia id(Long id) {
-        this.id = id;
-        return this;
-    }
+	public Aerovia id(Long id) {
+		this.id = id;
+		return this;
+	}
 
-    public Aerovia origem(String origem) {
-        this.origem = origem;
-        return this;
-    }
+	public Aerovia origem(String origem) {
+		this.origem = origem;
+		return this;
+	}
 
-    public Aerovia destino(String destino) {
-        this.destino = destino;
-        return this;
-    }
+	public Aerovia destino(String destino) {
+		this.destino = destino;
+		return this;
+	}
 
-    public Aerovia tamanho(double tamanho) {
-        this.tamanho = tamanho;
-        return this;
-    }
+	public Aerovia tamanho(double tamanho) {
+		this.tamanho = tamanho;
+		return this;
+	}
 
-    // Obrigatório para geração automática dos id's pela JPA
-    protected Aerovia() {}
+	// Obrigatório para geração automática dos id's pela JPA
+	protected Aerovia() {}
 }

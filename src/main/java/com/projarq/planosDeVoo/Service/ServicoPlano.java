@@ -6,7 +6,6 @@ import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAeronaves;
 import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAerovias;
 import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioPlanos;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -25,11 +24,19 @@ public class ServicoPlano {
     @Autowired
     private IRepositorioAerovias iRepositorioAerovias;
 
-    public PlanoDeVoo cancelarPlano(Long idPlano) {
+    public String cancelarPlano(Long idPlano) {
+        String retorno;
         var planoDeVoo = iRepositorioPlanos.getPlanoDeVooById(idPlano);
-        planoDeVoo.setCancelado(true);
-        var ret = iRepositorioPlanos.save(planoDeVoo);
-        return ret;
+        if (planoDeVoo != null) {
+            planoDeVoo.setCancelado(true);
+            planoDeVoo.zeraSlots();
+            var ret = iRepositorioPlanos.save(planoDeVoo);
+            retorno = "ok";
+            return "Status: " + retorno + ", PlanoDeVoo: " + ret.toString();
+        } else {
+            retorno = "não encontrado";
+            return "Status: " + retorno;
+        }
     }
 
     public AltitudeSlots getSlotsLivres(Long idAerovia, LocalDateTime dataHorarioInicio, Long idAeronave) {

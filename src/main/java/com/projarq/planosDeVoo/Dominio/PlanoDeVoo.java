@@ -96,6 +96,12 @@ public class PlanoDeVoo {
 		this.slots = slots;
 	}
 
+	public void zeraSlots(){
+		for (int i = 0; i < slots.size(); i++) {
+			slots.set(i, 0);
+		}
+	}
+
 	public ArrayList<Integer> getSlots() {
 		return this.slots;
 	}
@@ -148,6 +154,15 @@ public class PlanoDeVoo {
 		this.slots = slots;
 		return this;
 
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "PlanoDeVoo [id=" + id + ", matricPiloto=" + matricPiloto + ", idAeronave=" + idAeronave + ", idAerovia="
+				+ idAerovia + ", dataHorarioDeInicio=" + dataHorarioDeInicio + ", dataHorarioFim=" + dataHorarioFim
+				+ ", cancelado=" + cancelado + ", altitude=" + altitude + ", slots=" + slots + "]";
 	}
 
 	// Obrigatório para geração automática dos id's pela JPA

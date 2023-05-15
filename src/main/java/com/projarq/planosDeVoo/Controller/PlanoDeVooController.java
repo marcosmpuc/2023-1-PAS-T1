@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,9 +20,10 @@ public class PlanoDeVooController {
     private ServicoPlano servicoPlano;
 
     @GetMapping("/cancela/{idplano}")
-    public PlanoDeVoo cancelarPlano(@PathVariable(value = "idplano") Long idplano) {
+    public String cancelarPlano(@PathVariable(value = "idplano") Long idplano) {
         return servicoPlano.cancelarPlano(idplano);
     }
+
 
     @PostMapping(value = "/scta/slotslivres", consumes = "application/json", produces = "application/json")
     public AltitudeSlots slotsLivres(@RequestAttribute(name = "rota") Long idAerovia,

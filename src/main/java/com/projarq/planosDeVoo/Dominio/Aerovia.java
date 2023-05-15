@@ -65,7 +65,8 @@ public class Aerovia {
 	}
 
 	public Aerovia altura(int altura) {
-		this.altura = altura;
+		if(altura >= 25000 && altura <= 35000 ) {this.altura = altura;}
+		else this.altura = 25000;		//Default Lowest Altitude
 		return this;
 	}
 

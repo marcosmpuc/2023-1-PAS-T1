@@ -1,5 +1,7 @@
 package com.projarq.planosDeVoo.Dominio;
 
+import java.util.ArrayList;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,14 +13,11 @@ public class Aeronave {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-
 	private String prefixo;
-
 	private TipoDeAeronave tipo;
-
 	private double velocidadeDeCruzeiroKmH;
-
 	private double autonomiaKm;
+	private ArrayList<Integer> altitudesValidas;
 
 	public Aeronave(String s, String pr512, TipoDeAeronave particularDePequenoPorte, double v, double v1) {
 	}
@@ -41,6 +40,10 @@ public class Aeronave {
 
 	public double getAutonomiaKm() {
 		return this.autonomiaKm;
+	}
+
+	public ArrayList<Integer> getAltitudesValidas() {
+		return this.altitudesValidas;
 	}
 
 	public Aeronave(Long id) {
@@ -67,7 +70,7 @@ public class Aeronave {
 		return this;
 	}
 
-	public Aeronave autonomiaKm (double autonomiaKm) {
+	public Aeronave autonomiaKm(double autonomiaKm) {
 		this.autonomiaKm = autonomiaKm;
 		return this;
 	}

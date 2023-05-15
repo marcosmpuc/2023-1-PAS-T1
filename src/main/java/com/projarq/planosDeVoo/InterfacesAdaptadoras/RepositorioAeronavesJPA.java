@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.LinkedList;
 
 @Repository
-public class RepositorioAeronaveJPA implements IRepositorioAeronaves {
+public class RepositorioAeronavesJPA implements IRepositorioAeronaves {
     private LinkedList<Aeronave> aeronaves;
 
-    public RepositorioAeronaveJPA() {
+    public RepositorioAeronavesJPA() {
         aeronaves = new LinkedList<>();
         /*                         id, prefixo, tipo, velocidadeDeCruzeiroKmH, autonomiaKm */
         aeronaves.add(new Aeronave("1", "PR512", TipoDeAeronave.PARTICULAR_DE_PEQUENO_PORTE, 700.0,50.0));

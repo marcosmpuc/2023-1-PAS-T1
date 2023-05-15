@@ -2,7 +2,7 @@ package com.projarq.planosDeVoo.Service;
 
 import com.projarq.planosDeVoo.Dominio.Aerovia;
 import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioAerovias;
-import com.projarq.planosDeVoo.InterfacesAdaptadoras.RepositorioAeronaveJPA;
+import com.projarq.planosDeVoo.InterfacesAdaptadoras.RepositorioAeronavesJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

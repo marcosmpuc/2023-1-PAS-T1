@@ -9,7 +9,7 @@ INSERT INTO aerovia VALUES (4, 'CWB', 'FLO', 300)
 INSERT INTO aerovia VALUES (5, 'CWB', 'GRU', 400)
 INSERT INTO aerovia VALUES (6, 'GRU', 'CWB', 400)
 INSERT INTO aerovia VALUES (7, 'GRU', 'POA', 1120)
-INSERT INTO aerovia VALUES (8, 'POA', 'GRU', 1120)
+INSERT INTO aerovia VALUES (9, 'POA', 'FLO', 750)
 
 INSERT INTO aeroporto VALUES (1, 'POA')
 INSERT INTO aeroporto VALUES (2, 'FLO')

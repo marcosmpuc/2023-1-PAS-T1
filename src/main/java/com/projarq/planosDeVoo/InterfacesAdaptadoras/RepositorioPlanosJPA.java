@@ -5,6 +5,7 @@ import com.projarq.planosDeVoo.InterfacesAdaptadoras.IRepositorioPlanos;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 @Repository
@@ -20,8 +21,8 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
     }
 
     @Override
-    public LinkedList<PlanoDeVoo> todos() {
-        return new LinkedList<>(planoDeVoos);
+    public ArrayList<PlanoDeVoo> findAll() {
+        return new ArrayList<>(planoDeVoos);
     }
 
     @Override

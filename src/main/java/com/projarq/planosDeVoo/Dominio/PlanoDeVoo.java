@@ -20,7 +20,7 @@ public class PlanoDeVoo {
 	//altitude min 2500 max 35000
 	private Long altitude;
 
-	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim,boolean cancelado, Long altitude) {
+	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim, boolean cancelado, Long altitude) {
 	}
 
 	public Long getId() {

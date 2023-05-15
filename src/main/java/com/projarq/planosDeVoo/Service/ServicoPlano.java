@@ -41,6 +41,9 @@ public class ServicoPlano {
         }
     }
 
+    
+
+
     public AltitudeSlots getSlotsLivres(Long idAerovia, LocalDateTime dataHorarioInicio, Long idAeronave) {
         ArrayList<Integer> slots = calcularSlots(idAerovia, dataHorarioInicio, idAeronave);
         ArrayList<Integer> altitudesValidas = iRepositorioAeronaves.getById(idAeronave).obterAltitudesValidas();

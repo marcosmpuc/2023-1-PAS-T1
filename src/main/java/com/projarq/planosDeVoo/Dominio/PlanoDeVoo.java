@@ -107,7 +107,7 @@ public class PlanoDeVoo {
 
 	public PlanoDeVoo altitude(Long altitude){
 		if(altitude < 2500 || altitude > 35000){
-			return null;
+			throw new IllegalArgumentException("Valor inválido");
 		}else{
 			this.altitude = altitude;
 			return this;

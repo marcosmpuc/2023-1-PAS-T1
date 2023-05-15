@@ -34,7 +34,7 @@ public class ServicoPlano {
 
     public AltitudeSlots getSlotsLivres(Long idAerovia, LocalDateTime dataHorarioInicio, Long idAeronave) {
         ArrayList<Integer> slots = calcularSlots(idAerovia, dataHorarioInicio, idAeronave);
-        int[] altitudesValidas = iRepositorioAeronaves.getById(idAeronave).obterAltitudesValidas();
+        ArrayList<Integer> altitudesValidas = iRepositorioAeronaves.getById(idAeronave).obterAltitudesValidas();
 
         for (int altitude: altitudesValidas) {
             PlanoDeVoo planoTeste = iRepositorioPlanos.findAll().stream().filter(plano -> (plano.getDataHorarioDeInicio() == dataHorarioInicio

@@ -75,6 +75,13 @@ public class Aeronave {
 		return this;
 	}
 
+	public ArrayList<Integer> obterAltitudesValidas() {
+		ArrayList<Integer> altitudes = new ArrayList<>();
+		for (int altitude = this.tipo.altitudeMinimaPes; altitude < this.tipo.altitudeMaximaPes; altitude += 1000)
+			altitudes.add(altitude);
+		return altitudes;
+	}
+
 	// Obrigatório para geração automática dos id's pela JPA
 	protected Aeronave() {}
 

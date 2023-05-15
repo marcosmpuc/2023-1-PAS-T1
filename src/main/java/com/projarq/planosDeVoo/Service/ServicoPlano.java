@@ -14,8 +14,8 @@ public class ServicoPlano {
   @Autowired
   private IRepositorioPlanos iRepositorioPlanos;
 
-  public ArrayList<PlanoDeVoo> cancelarPlano(Long idPlano) {
-    var retorno = (ArrayList<PlanoDeVoo>) iRepositorioPlanos.findById(idPlano);
+  public PlanoDeVoo cancelarPlano(Long idPlano) {
+    var retorno = iRepositorioPlanos.getById(idPlano);
     return retorno;
   }
 }

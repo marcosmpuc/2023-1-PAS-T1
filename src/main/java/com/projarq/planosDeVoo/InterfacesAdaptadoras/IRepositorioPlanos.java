@@ -13,7 +13,6 @@ import java.util.List;
 public interface IRepositorioPlanos {
     ArrayList<PlanoDeVoo> findAll();
     
-    List<PlanoDeVoo> findById(Long id);
     PlanoDeVoo getById(Long id);
     // PlanoDeVoo getByMatricPiloto(Long matricPiloto);
     // PlanoDeVoo getByIdAeronave(Long idAeronave);

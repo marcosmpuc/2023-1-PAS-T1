@@ -30,25 +30,4 @@ public class RepositorioPlanosJPA implements IRepositorioPlanos {
     public PlanoDeVoo getById(Long id) {
         return planoDeVoos.stream().filter(c->(c.getId() == id)).findAny().orElse(null);
     }
-
-    @Override
-    public List<PlanoDeVoo> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
-
-    // @Override
-    // public PlanoDeVoo getByMatricPiloto(Long matricPiloto) {
-    //     return planoDeVoos.stream().filter(c->(c.getMatricPiloto() == matricPiloto)).findAny().orElse(null);
-    // }
-
-    // @Override
-    // public PlanoDeVoo getByIdAeronave(Long idAeronave) {
-    //     return planoDeVoos.stream().filter(c->(c.getIdAeronave() == idAeronave)).findAny().orElse(null);
-    // }
-
-    // @Override
-    // public PlanoDeVoo getByIdAerovia(Long idAerovia) {
-    //     return planoDeVoos.stream().filter(c->(c.getIdAerovia() == idAerovia)).findAny().orElse(null);
-    // }
 }

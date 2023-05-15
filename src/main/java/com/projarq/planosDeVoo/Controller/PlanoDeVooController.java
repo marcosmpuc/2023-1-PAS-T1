@@ -16,7 +16,7 @@ public class PlanoDeVooController {
     private ServicoPlano servicoPlano;
 
     @GetMapping("/{idplano}")
-    public ArrayList<PlanoDeVoo> cancelarPlano(@PathVariable(value = "idplano")Long idplano){
+    public PlanoDeVoo cancelarPlano(@PathVariable(value = "idplano")Long idplano){
         return servicoPlano.cancelarPlano(idplano);
     }
 }

@@ -9,6 +9,7 @@ import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class PlanoDeVooController {
     }
 
     @PostMapping(value = "/scta/aprovaPlanoDeVoo", consumes = "application/json", produces = "application/json")
-    public String aprovAltitudeSlots(@RequestAttribute(name = "rota") Long idAerovia,
+    public String aprovaAltitudeSlots(@RequestAttribute(name = "rota") Long idAerovia,
             @RequestAttribute(name = "id") BigInteger id,
             @RequestAttribute(name = "altitude") Integer altitude,
             @RequestAttribute(name = "cancelado") Boolean cancelado,
@@ -50,5 +51,17 @@ public class PlanoDeVooController {
         return zeDaManga;
     }
 
+    @PostMapping(value = "/scta/avaliaPlanoDeVoo", consumes = "application/json", produces = "application/json")
+    public String avaliaPlanoDeVoo(@RequestAttribute(name = "id") Long id,
+            @RequestAttribute(name = "idAeronave") Long idAeronave,
+            @RequestAttribute(name = "idAerovia") Long idAerovia,
+            @RequestAttribute(name = "altitude") int altitude,
+            @RequestAttribute(name = "slots") ArrayList<Integer> slots) {
+        return servicoPlano.avaliarPlanoDeVoo(new PlanoDeVoo(id)
+                .idAeronave(idAeronave)
+                .idAerovia(idAerovia)
+                .altitude(altitude)
+                .slots(slots));
+    }
 
 }

@@ -88,7 +88,7 @@ public class ServicoPlano {
         return slots;
     }
 
-    public String verificarPlanoDeVoo(PlanoDeVoo propostaPlano) {
+    public String avaliarPlanoDeVoo(PlanoDeVoo propostaPlano) {
         String output = "";
 
         Aeronave aeronave = iRepositorioAeronaves.getById(propostaPlano.getIdAeronave());

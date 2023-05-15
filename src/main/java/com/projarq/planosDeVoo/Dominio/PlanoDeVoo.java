@@ -18,7 +18,8 @@ public class PlanoDeVoo {
 	private LocalDateTime dataHorarioFim;
 	private boolean cancelado;
 	//altitude min 2500 max 35000
-	private Long altitude;
+	private int altitude;
+	private ArrayList<Integer> slots;
 
 	public PlanoDeVoo(Long string, Long string2, Long string3, Long string4, LocalDateTime dataHorarioDeInicio,LocalDateTime dataHorarioFim,boolean cancelado, Long altitude) {
 	}
@@ -71,6 +72,22 @@ public class PlanoDeVoo {
 		return this.cancelado;
 	}
 
+	public void setAltitude(int altitude) {
+		this.altitude = altitude;
+	}
+
+	public int getAltitude() {
+		return this.altitude;
+	}
+
+	public void setSlots(ArrayList<Integer> slots) {
+		this.slots = slots;
+	}
+
+	public ArrayList<Integer> getSlots() {
+		return this.slots;
+	}
+
 	public PlanoDeVoo(Long id) {
 		this.id = id;
 	}
@@ -100,18 +117,38 @@ public class PlanoDeVoo {
 		return this;
 	}
 
-	public PlanoDeVoo cancDeVoo(boolean cancelado){
-		this.cancelado= cancelado;
+	public PlanoDeVoo cancDeVoo(boolean cancelado) {
+		this.cancelado = cancelado;
 		return this;
 	}
 
-	public PlanoDeVoo altitude(Long altitude){
-		if(altitude < 2500 || altitude > 35000){
+	public PlanoDeVoo altitude(int altitude) {
+		if (altitude < 2500 || altitude > 35000) {
 			return null;
-		}else{
+		} else {
 			this.altitude = altitude;
 			return this;
 		}
+	}
+
+	public PlanoDeVoo slots(ArrayList<Integer> slots) {
+		for (Integer slot: slots)
+			if (slot < 0 || slot > 23)
+				return null;
+		this.slots = slots;
+		return this;
+	}
+
+	public boolean verificarSeSlotsConflitam(ArrayList<Integer> slots) {
+		return verificarSeSlotsConflitam(this.slots, slots);
+	}
+
+	public boolean verificarSeSlotsConflitam(ArrayList<Integer> slots1, ArrayList<Integer> slots2) {
+		for (Integer slot1: slots1)
+			for (Integer slot2: slots2)
+				if (slot1 == slot2)
+					return true;
+		return false;
 	}
 
 	// Obrigatório para geração automática dos id's pela JPA

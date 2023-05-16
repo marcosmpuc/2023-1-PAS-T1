@@ -40,18 +40,18 @@ public class PlanoDeVooController {
     }
 
 
-    @PostMapping(value = "/scta/avaliaPlanoDeVoo", consumes = "application/json", produces = "application/json")
-    public String avaliaPlanoDeVoo(@RequestAttribute(name = "id") Long id,
-            @RequestAttribute(name = "idAeronave") Long idAeronave,
-            @RequestAttribute(name = "idAerovia") Long idAerovia,
-            @RequestAttribute(name = "altitude") int altitude,
-            @RequestAttribute(name = "slots") ArrayList<Integer> slots) {
-        return servicoPlano.avaliarPlanoDeVoo(new PlanoDeVoo(id)
-                .idAeronave(idAeronave)
-                .idAerovia(idAerovia)
-                .altitude(altitude)
-                .slots(slots));
-    }
+    // @PostMapping(value = "/scta/avaliaPlanoDeVoo", consumes = "application/json", produces = "application/json")
+    // public String avaliaPlanoDeVoo(@RequestAttribute(name = "id") Long id,
+    //         @RequestAttribute(name = "idAeronave") Long idAeronave,
+    //         @RequestAttribute(name = "idAerovia") Long idAerovia,
+    //         @RequestAttribute(name = "altitude") int altitude,
+    //         @RequestAttribute(name = "slots") ArrayList<Integer> slots) {
+    //     return servicoPlano.avaliarPlanoDeVoo(new PlanoDeVoo(id)
+    //             .idAeronave(idAeronave)
+    //             .idAerovia(idAerovia)
+    //             .altitude(altitude)
+    //             .slots(slots));
+    // }
 
     @PostMapping(value = "/aprovaPlanoDeVoo", consumes = "application/json", produces = "application/json")
     public String aprovaPlanoVoo(@RequestBody String json) {
@@ -60,26 +60,20 @@ public class PlanoDeVooController {
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode jsonNode = objectMapper.readTree(json);
 
-            BigInteger id = new BigInteger(jsonNode.get("id").asText());
+            Long id = Long.parseLong(jsonNode.get("id").asText());
             Integer altitude = jsonNode.get("altitude").asInt();
             Boolean cancelado = jsonNode.get("cancelado").asBoolean();
-            LocalTime inicio = LocalTime.parse(jsonNode.get("data_horario_inicio").asText());
-            LocalTime fim = LocalTime.parse(jsonNode.get("data_horario_fim").asText());
-            BigInteger id_aeronave = new BigInteger(jsonNode.get("id_aeronave").asText());
-            BigInteger id_aerovia = new BigInteger(jsonNode.get("id_aerovia").asText());
-            BigInteger matric_piloto = new BigInteger(jsonNode.get("matric_piloto").asText());
+            LocalDateTime inicio = LocalDateTime.parse(jsonNode.get("data_horario_inicio").asText());
+            LocalDateTime fim = LocalDateTime.parse(jsonNode.get("data_horario_fim").asText());
+            Long id_aeronave = Long.parseLong(jsonNode.get("id_aeronave").asText());
+            Long id_aerovia = Long.parseLong(jsonNode.get("id_aerovia").asText());
+            Long matric_piloto = Long.parseLong(jsonNode.get("matric_piloto").asText());
 
             Integer[] slots = objectMapper.convertValue(jsonNode.get("slots"), Integer[].class);
 
-            System.out.println("id: " + id);
-            System.out.println("altitude: " + altitude);
-            System.out.println("cancelado: " + cancelado);
-            System.out.println("inicio: " + inicio);
-            System.out.println("fim: " + fim);
-            System.out.println("id_aeronave: " + id_aeronave);
-            System.out.println("id_aerovia: " + id_aerovia);
-            System.out.println("matric_piloto: " + matric_piloto);
-            System.out.println("slots: " + Arrays.toString(slots));
+            PlanoDeVoo teste = new PlanoDeVoo(id, altitude, cancelado, inicio, fim, id_aeronave, id_aerovia, matric_piloto, slots);
+
+            teste.toString();
 
             String zeDaManga = "";
             return zeDaManga;

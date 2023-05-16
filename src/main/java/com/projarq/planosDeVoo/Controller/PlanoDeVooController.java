@@ -39,21 +39,6 @@ public class PlanoDeVooController {
         return servicoPlano.getSlotsLivres(idAerovia, LocalDateTime.of(data, horario), idAeronave);
     }
 
-    @PostMapping(value = "/scta/aprovaPlanoDeVoo", consumes = "application/json", produces = "application/json")
-    public String aprovaAltitudeSlots(@RequestAttribute(name = "rota") Long idAerovia,
-            @RequestAttribute(name = "id") BigInteger id,
-            @RequestAttribute(name = "altitude") Integer altitude,
-            @RequestAttribute(name = "cancelado") Boolean cancelado,
-            @RequestAttribute(name = "data_horario_inicio") LocalTime inicio,
-            @RequestAttribute(name = "data_horario_fim") LocalTime fim,
-            @RequestAttribute(name = "id_aeronave") BigInteger id_aeronave,
-            @RequestAttribute(name = "id_aerovia") BigInteger id_aerovia,
-            @RequestAttribute(name = "matric_piloto") BigInteger matric_piloto,
-            @RequestAttribute(name = "slots") Integer[] slots){
-                
-                String zeDaManga = "";
-        return zeDaManga;
-    }
 
     @PostMapping(value = "/scta/avaliaPlanoDeVoo", consumes = "application/json", produces = "application/json")
     public String avaliaPlanoDeVoo(@RequestAttribute(name = "id") Long id,
@@ -68,6 +53,7 @@ public class PlanoDeVooController {
                 .slots(slots));
     }
 
+    @PostMapping(value = "/aprovaPlanoDeVoo", consumes = "application/json", produces = "application/json")
     public String aprovaPlanoVoo(@RequestBody String json) {
         System.out.println("fala zeze bom dia cara");
         try {
